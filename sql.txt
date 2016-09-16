@@ -1,0 +1,18 @@
+create table userproj(
+id_userproj bigint not null primary key generated always as identity (start with 1, increment by 1),
+username varchar(30),
+password varchar(32) 
+
+);
+
+create table userinfo(
+
+id_userinfo bigint not null primary key generated always as identity(start with 1, increment by 1 ),
+fullname varchar(100),
+email varchar(30),
+birthday date,
+phone varchar(15)
+
+);
+
+alter table userinfo add foreign key (id_userinfo) references userproj(id_userproj) on delete cascade;

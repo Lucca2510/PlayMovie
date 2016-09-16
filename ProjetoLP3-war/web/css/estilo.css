@@ -1,0 +1,126 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04/09/2016, 14:05:07
+    Author     : lgd25
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,700';
+
+
+html,body{
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    margin:0;
+    padding:0;
+    position: relative;
+
+    background-color: #ecf0f1;
+
+}
+
+header{
+    height: 80px;
+    background-color: #333745;
+}
+
+a{
+    text-decoration: none;
+    color: #E2F0D6;
+}
+a:hover{
+    text-decoration: underline;
+    color: #8A0917;
+    
+}
+
+footer{  
+
+    background-color: #333745;
+    bottom: 0;
+    width: 100%;    
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top: 20px;
+}
+.footercontainer{
+    display:flex;
+    width: 970px;
+    justify-content:center;
+    color: white;
+    
+}
+.login p{
+    margin: 0;
+}
+
+
+.flex-container{
+    width: 970px;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    height: 80px;
+    color: white;
+}
+.flex-container ul{
+    display: flex;
+}
+
+.flex-container li{
+    padding: 10px;
+    list-style: none;
+
+}
+
+
+#main{
+    margin: 10px;
+    margin-left:  200px;
+    margin-right:  200px;
+    background-color: #ecf0f1;
+    min-height: 73.5%;
+    display:flex;
+    justify-content:center;
+}
+
+form input{
+    border: none;
+    border-bottom: 2px solid #8A0917;
+    width:30%;
+    padding: 5px;
+}
+
+form input[type="submit"]{
+    width:15%;
+    background-color: #8A0917;
+    color:#E2F0D6;
+   border-bottom: 2px solid #8A0917;
+
+}
+
+input[type="button"]{
+    background-color:#8A0917; 
+    border: none;
+    padding: 5px;
+    border-bottom: 2px solid #8A0917;
+     color:#E2F0D6;
+}
+
+ ul li:hover{
+    
+    color: #8A0917;
+    text-decoration: underline;
+}
+
+#register input{
+    width:100%;
+}
+.title{
+    border-bottom: 1px solid black;
+}
