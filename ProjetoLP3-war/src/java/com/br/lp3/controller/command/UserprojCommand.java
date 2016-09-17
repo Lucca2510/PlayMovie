@@ -124,8 +124,8 @@ public class UserprojCommand implements Command {
                 } catch (ParseException ex) {
                     Logger.getLogger(UserprojCommand.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                Userproj usernew2=new Userproj();
-                usernew2 = userprojDAO.readByUsername(username);               
+                Userproj usernew2= (Userproj)request.getSession().getAttribute("user");
+                              
                 usernew2.getUserinfo().setBirthday(birthday2);
                 usernew2.getUserinfo().setFullname(fullname);
                 usernew2.getUserinfo().setPhone(phone);
