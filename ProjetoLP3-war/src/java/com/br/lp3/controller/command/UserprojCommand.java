@@ -36,6 +36,7 @@ public class UserprojCommand implements Command {
     private String email;
     private String phone;
     private Userproj useraux;
+    Userproj usernew = new Userproj();
 
     @Override
     public void init(HttpServletRequest request, HttpServletResponse response) {
@@ -108,7 +109,6 @@ public class UserprojCommand implements Command {
                 break;
             case "update":
                 username = request.getParameter("username");
-
                 email = request.getParameter("email");
                 fullname = request.getParameter("fullname");
                 phone = request.getParameter("phone");
@@ -121,10 +121,7 @@ public class UserprojCommand implements Command {
                 } catch (ParseException ex) {
                     Logger.getLogger(UserprojCommand.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
-                Userproj usernew = userprojDAO.readByUsername(username);
-
-                
+                usernew = userprojDAO.readByUsername(username);                
                 usernew.getUserinfo().setBirthday(birthday);
                 usernew.getUserinfo().setEmail(email);
                 usernew.getUserinfo().setFullname(fullname);
