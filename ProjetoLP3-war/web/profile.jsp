@@ -26,7 +26,7 @@
 
                         <p><label for="username">Username:</br><input type="text" name="username" value="${user.username}" disabled/></label></p>                        
                         <p><label for="fullname">Full name:</br><input type="text" name="fullname"/></label></p>
-                        <p><label for="email">Email:</br><input type="text" name="email" value="${user.useinfo.email}" disabled/></label></p>
+                        <p><label for="email">Email:</br><input type="text" name="email" value="${user.userinfo.email}" disabled/></label></p>
                         <p><label for="phone">Phone:</br><input type="text" name="phone"/></label></p>
                         <p><label for="birthday">Birthday:</br><input type="date" name="birthday"/></label></p>
                         <input type="hidden" name="command" value="Userproj.update"/>
