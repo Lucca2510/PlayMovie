@@ -24,7 +24,7 @@
                         <h1 class="title">Update your profile</h1>
                     <form action="Controller" method="POST" id="register">
 
-                        <p><label for="username">Username:</br><input type="text" name="username" value="${user.usename}" disabled/></label></p>                        
+                        <p><label for="username">Username:</br><input type="text" name="username" value="${user.username}" disabled/></label></p>                        
                         <p><label for="fullname">Full name:</br><input type="text" name="fullname"/></label></p>
                         <p><label for="email">Email:</br><input type="text" name="email" value="${user.useinfo.email}" disabled/></label></p>
                         <p><label for="phone">Phone:</br><input type="text" name="phone"/></label></p>
