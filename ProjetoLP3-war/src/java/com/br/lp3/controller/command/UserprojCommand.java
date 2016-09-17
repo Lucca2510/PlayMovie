@@ -115,14 +115,14 @@ public class UserprojCommand implements Command {
                 String bddate2 = request.getParameter("birthday");
                 SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
 
-                birthday = new Date();
+                Date birthday2 = new Date();
                 try {
-                    birthday = sdf2.parse(bddate2);
+                    birthday2 = sdf2.parse(bddate2);
                 } catch (ParseException ex) {
                     Logger.getLogger(UserprojCommand.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 usernew = userprojDAO.readByUsername(username);                
-                usernew.getUserinfo().setBirthday(birthday);
+                usernew.getUserinfo().setBirthday(birthday2);
                 usernew.getUserinfo().setEmail(email);
                 usernew.getUserinfo().setFullname(fullname);
                 usernew.getUserinfo().setPhone(phone);
