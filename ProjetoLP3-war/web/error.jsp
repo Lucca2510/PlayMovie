@@ -12,7 +12,7 @@
 
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Index</title>
+        <title>PlayMovies</title>
     </head>
 
     <body>

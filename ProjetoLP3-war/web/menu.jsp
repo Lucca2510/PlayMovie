@@ -12,9 +12,11 @@
             <div class="flex-container">
                 <a href="index.jsp"><h3 id="textMenu">ProjetoLP3</h3></a>
                 <ul>
-                    <li>Link</li>
-                    <li>Link</li>
-                    <li>Link</li>
+                 
+                    <a href="contatos.jsp"><li>Contatos</li></a>
+                   <a href="about.jsp"><li>About</li></a>
+                                     
+                    
                 </ul>
 
                 <form action="Controller" method="POST">
@@ -34,9 +36,8 @@
             <div class="flex-container">
                  <a href="home.jsp"><h3 id="textMenu">ProjetoLP3</h3></a>
                 <ul>
-                    <li>Link</li>
-                    <li>Link</li>
-                    <li>Link</li>
+                   <a href="home.jsp"><li>Home</li></a>
+                    <a href="profile.jsp"><li>Profile</li></a>
                 </ul>
                 <a href="Controller?command=Userproj.logout"><input type="button" value="Logout"/></a>
             </div>
