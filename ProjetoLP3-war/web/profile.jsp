@@ -20,23 +20,25 @@
 
             <section id="main">            
                 <article class="mainProfile">
-                    <article>
-                        <h1 class="title">Update your profile</h1>
-                    <form action="Controller" method="POST" id="register">
 
-                        <p><label for="username">Username:</br><input type="text" name="username" value="${user.username}" disabled/></label></p>                        
-                        <p><label for="fullname">Full name:</br><input type="text" name="fullname"/></label></p>
-                        <p><label for="email">Email:</br><input type="text" name="email" value="${user.userinfo.email}" disabled/></label></p>
-                        <p><label for="phone">Phone:</br><input type="text" name="phone"/></label></p>
-                        <p><label for="birthday">Birthday:</br><input type="date" name="birthday"/></label></p>
-                        <input type="hidden" name="command" value="Userproj.update"/>
-                        <p><label for="submit"></br><input type="submit" value="Register"/></label></p>                       
+                    <h1 class="title">Update your profile</h1>
 
-                    </form>
-                        
-                    </article>
-                </article>
-            </section>
+
+                <form action="Controller" method="POST" id="register">
+
+                    <p><label for="username">Username:</br><input type="text" name="username" value="${user.username}" disabled/></label></p>                        
+                    <p><label for="fullname">Full name:</br><input type="text" name="fullname"/></label></p>
+                    <p><label for="email">Email:</br><input type="text" name="email" value="${user.userinfo.email}" disabled/></label></p>
+                    <p><label for="phone">Phone:</br><input type="text" name="phone"/></label></p>
+                    <p><label for="birthday">Birthday:</br><input type="date" name="birthday"/></label></p>
+                    <input type="hidden" name="command" value="Userproj.update"/>
+                    <p><label for="submit"></br><input type="submit" value="Update"/></label></p>                       
+
+                </form>
+
+            </article>
+
+        </section>
 
         <c:import url="footer.jspf"></c:import>
 

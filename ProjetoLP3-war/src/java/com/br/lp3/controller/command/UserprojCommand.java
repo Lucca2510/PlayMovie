@@ -72,21 +72,21 @@ public class UserprojCommand implements Command {
                 String bddate = request.getParameter("birthday");
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 useraux = userprojDAO.readByUsername(username);
-                 Userproj useraux2 = userprojDAO.readByEmail(email);
-                 Date birthday = new Date();
-                    try {
-                         birthday = sdf.parse(bddate);
-                    } catch (ParseException ex) {
-                        Logger.getLogger(UserprojCommand.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    
-                if(!password.equals(password2)){
+                Userproj useraux2 = userprojDAO.readByEmail(email);
+                Date birthday = new Date();
+                try {
+                    birthday = sdf.parse(bddate);
+                } catch (ParseException ex) {
+                    Logger.getLogger(UserprojCommand.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                if (!password.equals(password2)) {
                     request.getSession().setAttribute("error", "Passwords doesn't match!");
-                }else if(useraux!=null){
+                } else if (useraux != null) {
                     request.getSession().setAttribute("error", "Username already exists!");
-                }else if(useraux2!=null){
+                } else if (useraux2 != null) {
                     request.getSession().setAttribute("error", "This email is already registered!");
-                }else{
+                } else {
                     Userproj usernew = new Userproj();
                     usernew.setUsername(username);
                     usernew.setPassword(password);
@@ -98,7 +98,7 @@ public class UserprojCommand implements Command {
                     uinew.setUserproj(usernew);
                     usernew.setUserinfo(uinew);
                     userprojDAO.create(usernew);
-                    responsePage="index.jsp";
+                    responsePage = "index.jsp";
                 }
 
                 break;
@@ -106,10 +106,47 @@ public class UserprojCommand implements Command {
                 request.getSession().invalidate();
                 responsePage = "index.jsp";
                 break;
-            case"update":
-                
-               
-            break;
+            case "update":
+                username = request.getParameter("username");
+                password = request.getParameter("password");
+                password2 = request.getParameter("password2");
+                email = request.getParameter("email");
+                fullname = request.getParameter("fullname");
+                phone = request.getParameter("phone");
+                bddate = request.getParameter("birthday");
+                sdf = new SimpleDateFormat("dd/MM/yyyy");
+                useraux = userprojDAO.readByUsername(username);
+                useraux2 = userprojDAO.readByEmail(email);
+                birthday = new Date();
+                try {
+                    birthday = sdf.parse(bddate);
+                } catch (ParseException ex) {
+                    Logger.getLogger(UserprojCommand.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                if (!password.equals(password2)) {
+                    request.getSession().setAttribute("error", "Passwords doesn't match!");
+                } else if (useraux != null) {
+                    request.getSession().setAttribute("error", "Username already exists!");
+                } else if (useraux2 != null) {
+                    request.getSession().setAttribute("error", "This email is already registered!");
+                } else {
+                    Userproj usernew = new Userproj();
+                    usernew.setUsername(username);
+                    usernew.setPassword(password);
+                    Userinfo uinew = new Userinfo();
+                    uinew.setBirthday(birthday);
+                    uinew.setEmail(email);
+                    uinew.setFullname(fullname);
+                    uinew.setPhone(phone);
+                    uinew.setUserproj(usernew);
+                    usernew.setUserinfo(uinew);
+                    userprojDAO.update(usernew);
+                    request.getSession().setAttribute("user", usernew);
+                    responsePage = "home.jsp";
+                    
+                    break;
+                }
         }
     }
 
