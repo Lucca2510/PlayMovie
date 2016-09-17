@@ -19,8 +19,22 @@
         <c:import url="menu.jsp"></c:import>
 
             <section id="main">            
-                <article class="main">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                <article class="mainProfile">
+                    <article>
+                        <h1 class="title">Update your profile</h1>
+                    <form action="Controller" method="POST" id="register">
+
+                        <p><label for="username">Username:</br><input type="text" name="username" value="${user.usename}" disabled/></label></p>                        
+                        <p><label for="fullname">Full name:</br><input type="text" name="fullname"/></label></p>
+                        <p><label for="email">Email:</br><input type="text" name="email" value="${user.useinfo.email}" disabled/></label></p>
+                        <p><label for="phone">Phone:</br><input type="text" name="phone"/></label></p>
+                        <p><label for="birthday">Birthday:</br><input type="date" name="birthday"/></label></p>
+                        <input type="hidden" name="command" value="Userproj.update"/>
+                        <p><label for="submit"></br><input type="submit" value="Register"/></label></p>                       
+
+                    </form>
+                        
+                    </article>
                 </article>
             </section>
 

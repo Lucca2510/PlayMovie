@@ -106,6 +106,10 @@ public class UserprojCommand implements Command {
                 request.getSession().invalidate();
                 responsePage = "index.jsp";
                 break;
+            case"update":
+                
+               
+            break;
         }
     }
 
