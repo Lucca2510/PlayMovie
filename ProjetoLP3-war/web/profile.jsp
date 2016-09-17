@@ -18,21 +18,22 @@
     <body>
         <c:import url="menu.jsp"></c:import>
 
-            <section id="main">            
+            <section id="main">
+
                 <article class="mainProfile">
 
                     <h1 class="title">Update your profile</h1>
 
 
-                <form action="Controller" method="POST" id="register">
+                    <form action="Controller" method="POST" id="register">
 
-                    <p><label for="username">Username:</br><input type="text" name="username" value="${user.username}" disabled/></label></p>                        
-                    <p><label for="fullname">Full name:</br><input type="text" name="fullname"/></label></p>
-                    <p><label for="email">Email:</br><input type="text" name="email" value="${user.userinfo.email}" disabled/></label></p>
-                    <p><label for="phone">Phone:</br><input type="text" name="phone"/></label></p>
-                    <p><label for="birthday">Birthday:</br><input type="date" name="birthday"/></label></p>
+                        <p><label for="username">Username:</br><input type="text" name="username" value="${user.username}" disabled/></label></p>       
+                    <p><label for="fullname">Full name:</br><input type="text" name="fullname" value="${user.userinfo.fullname}" /></label></p>
+                    <p><label for="email">Email:</br><input type="text" name="email" value="${user.userinfo.email}" disabled /></label></p>
+                    <p><label for="phone">Phone:</br><input type="text" name="phone" value="${user.userinfo.phone}" /> </label></p>
+                    <p><label for="birthday">Birthday:</br><input type="date" name="birthday" value="${user.userinfo.getDateChrome()}"/></label></p>
                     <input type="hidden" name="command" value="Userproj.update"/>
-                    <p><label for="submit"></br><input type="submit" value="Update"/></label></p>                       
+                    <p><label for="submit"></br><input type="submit" value="Update"/></label></p>      
 
                 </form>
 

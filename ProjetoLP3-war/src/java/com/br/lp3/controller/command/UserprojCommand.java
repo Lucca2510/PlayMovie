@@ -36,7 +36,7 @@ public class UserprojCommand implements Command {
     private String email;
     private String phone;
     private Userproj useraux;
-    Userproj usernew = new Userproj();
+   
 
     @Override
     public void init(HttpServletRequest request, HttpServletResponse response) {
@@ -48,6 +48,7 @@ public class UserprojCommand implements Command {
     public void execute() {
         String action = request.getParameter("command").split("\\.")[1];
         switch (action) {
+            
             case "login":
                 username = request.getParameter("username");
                 password = request.getParameter("password");
@@ -71,7 +72,7 @@ public class UserprojCommand implements Command {
                 fullname = request.getParameter("fullname");
                 phone = request.getParameter("phone");
                 String bddate = request.getParameter("birthday");
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 useraux = userprojDAO.readByUsername(username);
                 Userproj useraux2 = userprojDAO.readByEmail(email);
                 Date birthday = new Date();
@@ -107,30 +108,32 @@ public class UserprojCommand implements Command {
                 request.getSession().invalidate();
                 responsePage = "index.jsp";
                 break;
+                
             case "update":
+                
                 username = request.getParameter("username");
                 email = request.getParameter("email");
                 fullname = request.getParameter("fullname");
                 phone = request.getParameter("phone");
                 String bddate2 = request.getParameter("birthday");
-                SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
-
+                SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
                 Date birthday2 = new Date();
+
                 try {
                     birthday2 = sdf2.parse(bddate2);
                 } catch (ParseException ex) {
                     Logger.getLogger(UserprojCommand.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                usernew = userprojDAO.readByUsername(username);                
-                usernew.getUserinfo().setBirthday(birthday2);
-                usernew.getUserinfo().setEmail(email);
-                usernew.getUserinfo().setFullname(fullname);
-                usernew.getUserinfo().setPhone(phone);
-                usernew.getUserinfo().setUserproj(usernew);
+                Userproj usernew2=new Userproj();
+                usernew2 = userprojDAO.readByUsername(username);               
+                usernew2.getUserinfo().setBirthday(birthday2);
+                usernew2.getUserinfo().setFullname(fullname);
+                usernew2.getUserinfo().setPhone(phone);
+                userprojDAO.update(usernew2);
+                request.getSession().setAttribute("user", usernew2);
                 
-                userprojDAO.update(usernew);
-                request.getSession().setAttribute("user", usernew);
-                responsePage = "home.jsp";
+                
+                responsePage="index.jsp";
 
                 break;
 

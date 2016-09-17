@@ -6,6 +6,7 @@
 package com.br.lp3.model.entities;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -115,6 +116,11 @@ public class Userinfo implements Serializable {
 
     public void setUserproj(Userproj userproj) {
         this.userproj = userproj;
+    }
+    
+    public String getDateChrome(){
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(birthday);
     }
 
     @Override
