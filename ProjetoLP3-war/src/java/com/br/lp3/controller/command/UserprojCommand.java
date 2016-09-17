@@ -112,12 +112,12 @@ public class UserprojCommand implements Command {
                 email = request.getParameter("email");
                 fullname = request.getParameter("fullname");
                 phone = request.getParameter("phone");
-                bddate = request.getParameter("birthday");
-                sdf = new SimpleDateFormat("dd/MM/yyyy");
+                String bddate2 = request.getParameter("birthday");
+                SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
 
                 birthday = new Date();
                 try {
-                    birthday = sdf.parse(bddate);
+                    birthday = sdf2.parse(bddate2);
                 } catch (ParseException ex) {
                     Logger.getLogger(UserprojCommand.class.getName()).log(Level.SEVERE, null, ex);
                 }
