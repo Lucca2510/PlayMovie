@@ -124,13 +124,13 @@ public class UserprojCommand implements Command {
 
                 Userproj usernew = userprojDAO.readByUsername(username);
 
-                Userinfo uinew = new Userinfo();
-                uinew.setBirthday(birthday);
-                uinew.setEmail(email);
-                uinew.setFullname(fullname);
-                uinew.setPhone(phone);
-                uinew.setUserproj(usernew);
-                usernew.setUserinfo(uinew);
+                
+                usernew.getUserinfo().setBirthday(birthday);
+                usernew.getUserinfo().setEmail(email);
+                usernew.getUserinfo().setFullname(fullname);
+                usernew.getUserinfo().setPhone(phone);
+                usernew.getUserinfo().setUserproj(usernew);
+                
                 userprojDAO.update(usernew);
                 request.getSession().setAttribute("user", usernew);
                 responsePage = "home.jsp";
