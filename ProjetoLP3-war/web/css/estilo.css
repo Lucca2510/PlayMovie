@@ -24,7 +24,7 @@ html,body{
 
 header{
     height: 80px;
-    background-color: #333745;
+    background-color: #393e41;
 }
 
 a{
@@ -39,7 +39,7 @@ a:hover{
 
 footer{  
 
-    background-color: #333745;
+    background-color: #393e41;
     bottom: 0;
     width: 100%;    
     display: flex;
@@ -91,21 +91,21 @@ footer{
 
 form input{
     border: none;
-    border-bottom: 2px solid #8A0917;
+    border-bottom: 2px solid #ff0018;
     width:30%;
     padding: 5px;
 }
 
 form input[type="submit"]{
     width:15%;
-    background-color: #8A0917;
+    background-color: #ff0018;
     color:#E2F0D6;
    border-bottom: 2px solid #8A0917;
 
 }
 
 input[type="button"]{
-    background-color:#8A0917; 
+    background-color:#ff0018; 
     border: none;
     padding: 5px;
     border-bottom: 2px solid #8A0917;
