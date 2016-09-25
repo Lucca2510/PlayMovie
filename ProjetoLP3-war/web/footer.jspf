@@ -1,5 +1,19 @@
 <footer>
     <div class="footercontainer">
-        <h3>Projeto</h3>
+        <img src="img/oculos.png" alt="oculos" style="width:80px;height:80px;">
+        <img src="img/sodaDireita.png" alt="soda" style="width:80px;height:80px;">
+        <img src="img/clacketDireita.png" alt="clacket" style="width:80px;height:80px;padding-right: 10px">
+        <img src="img/ticketDireita.png" alt="ticket" style="width:80px;height:80px;padding-right: 10px">
+        <img src="img/popcorn.png" alt="pipoca" style="width:80px;height:80px;">
+        <img src="img/roloEsquerdaBaixo.png" alt="rolos" style="width:80px;height:80px;">
+        <img src="img/teste3.png" alt="fita" style="width:80px;height:80px;padding-right: 30px;padding-left: 10px;">
+        <p>Copyright © LP3 Project. All rights reserved.</p>
+        <img src="img/teste3.png" alt="fita" style="width:80px;height:80px;padding-left: 30px;padding-right: 10px;">
+        <img src="img/roloDireitaBaixo.png" alt="rolos" style="width:80px;height:80px;">
+        <img src="img/popcorn.png" alt="pipoca" style="width:80px;height:80px;">
+        <img src="img/ticketEsquerda.png" alt="ticket" style="width:80px;height:80px;padding-left: 10px">
+        <img src="img/clacketEsquerda.png" alt="clacket" style="width:80px;height:80px;padding-left: 10px">
+        <img src="img/sodaEsquerda.png" alt="soda" style="width:80px;height:80px;">
+        <img src="img/oculos.png" alt="oculos" style="width:80px;height:80px;">
     </div>
 </footer>

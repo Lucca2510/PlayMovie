@@ -64,14 +64,12 @@ public class UserprojDAO implements GenericDAO<Userproj> {
     }
 
     @Override
-    public void update(Userproj e
-    ) {
+    public void update(Userproj e) {
         em.merge(e);
     }
 
     @Override
-    public void delete(Userproj e
-    ) {
+    public void delete(Userproj e) {
         em.merge(e);
         em.remove(e);
     }

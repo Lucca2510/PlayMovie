@@ -32,27 +32,28 @@ a{
     color: white;
 }
 a:hover{
-    text-decoration: underline;
-    color: #8A0917;
-    
+    color: white;
+
 }
 
-footer{  
+/*
 
+*/
+footer{  
     background-color: #393e41;
     bottom: 0;
     width: 100%;    
     display: flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
     margin-top: 20px;
+
 }
 .footercontainer{
     display:flex;
-    width: 970px;
+    width: 2000px;
     justify-content:center;
     color: white;
-    
 }
 .login p{
     margin: 0;
@@ -78,7 +79,6 @@ footer{
 
 }
 
-
 #main{
     margin: 10px;
     margin-left:  200px;
@@ -87,6 +87,7 @@ footer{
     min-height: 78.5%;
     display:flex;
     justify-content:center;
+    text-align: center;
 }
 
 form input{
@@ -99,8 +100,8 @@ form input{
 form input[type="submit"]{
     width:15%;
     background-color: #ff0018;
-    color:#E2F0D6;
-   border-bottom: 2px solid #8A0917;
+    color:white;
+    border-bottom: 2px solid #8A0917;
 
 }
 
@@ -109,18 +110,124 @@ input[type="button"]{
     border: none;
     padding: 5px;
     border-bottom: 2px solid #8A0917;
-     color:#E2F0D6;
+    color:white;
 }
 
- ul li:hover{
-    
-    color: #8A0917;
-    text-decoration: underline;
-}
 
 #register input{
     width:100%;
 }
 .title{
-    border-bottom: 1px solid gray;
+    //border-bottom: 1px solid gray;
+}
+
+
+/*-------------------------------*/
+
+ul li:hover{
+    color: white;
+    background-color: grey;
+}
+
+ul li{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+/*-------------------------------*/
+
+
+
+#contatos{
+    margin-top: 200px;
+    text-align: center;
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px;
+    background: #dddddd;
+    width: 300px;
+    border-radius: 25px;
+}
+
+.about{
+    margin-top: 60px;
+    justify-content:center;
+    display:flex;
+    background: white;
+    border: 3px solid black;
+    text-align: center;
+    border-radius: 30px;
+    width:900px;
+}
+
+#divProfile{
+    margin: 50px;
+    text-align: center;
+    width: 300px;
+    background-color: #dddddd;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+
+#divError{
+    margin: 100px;
+}
+
+body section div div {
+    text-align: center;
+    margin-top:25px;
+    width: 100%; 
+    background-color: #dddddd;
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 100%;
+}
+
+body section div div img{
+    margin-top:25px;
+}
+
+#aboutF{
+    margin-right: 10px;
+    display:block;
+}
+
+#aboutL{
+    margin-left: 10px;
+    display:block;
+}
+#aboutG{
+    margin-left: 10px;
+    margin-right: 10px;
+    display:block;
+}
+
+header div form a:hover{
+    background-color: grey;
+}
+
+header div form a{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+}
+
+header div form input[type="submit"]{
+    cursor : pointer;
+}
+
+header div a input{
+    cursor : pointer;
+}
+
+#main div{
+    align-items:center;
+}
+
+#main div p{
+    justify-content:center;
+    display:flex;
 }

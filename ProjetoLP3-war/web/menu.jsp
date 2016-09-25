@@ -10,13 +10,19 @@
     <c:when test="${user==null}">
         <header>
             <div class="flex-container">
-                <a href="index.jsp"><h3 id="textMenu">ProjetoLP3</h3></a>
+                <%--
+                    <a href="index.jsp"><h3 id="textMenu">PLAY MOVIE</h3></a>
+                --%>
+                
+                <img src="img/mask1.png" alt="mascara" style="width:80px;height:80px;">
+                <a href="index.jsp"><img src="img/logoMenor.png" alt="coisas" style="width:80px;height:80px;"></a>
+
                 <ul>
-                 
-                    <a href="contatos.jsp"><li>Contatos</li></a>
-                   <a href="about.jsp"><li>About</li></a>
-                                     
-                    
+
+                    <a href="contatos.jsp"><li>Contacts</li></a>
+                    <a href="about.jsp"><li>About</li></a>
+
+
                 </ul>
 
                 <form action="Controller" method="POST">
@@ -26,6 +32,7 @@
                     <input type="submit" value="Login"/>
                     <a href="register.jsp">Register</a> 
                 </form>
+                <img src="img/mask2.png" alt="mascara" style="width:80px;height:80px;">
             </div>
         </header>
     </c:when>
@@ -34,12 +41,16 @@
     <c:when test="${user!=null}">
         <header>
             <div class="flex-container">
-                 <a href="home.jsp"><h3 id="textMenu">ProjetoLP3</h3></a>
+                <img src="img/mask1.png" alt="mascara" style="width:80px;height:80px;">
+                <a href="home.jsp"><img src="img/logoMenor.png" alt="coisas" style="width:80px;height:80px;"></a>
                 <ul>
-                   <a href="home.jsp"><li>Home</li></a>
+                    <a href="home.jsp"><li>Home</li></a>
                     <a href="profile.jsp"><li>Profile</li></a>
+                    <a href="contatos.jsp"><li>Contacts</li></a>
+                    <a href="about.jsp"><li>About</li></a>
                 </ul>
-                <a href="Controller?command=Userproj.logout"><input type="button" value="Logout"/></a>
+                <a href="Controller?command=Userproj.logout"><input type="button" value="Logout"/><br></a>
+                <img src="img/mask2.png" alt="mascara" style="width:80px;height:80px;"/>
             </div>
         </header>
     </c:when>

@@ -20,14 +20,11 @@
 
             <section id="main">
 
-                <article class="mainProfile">
-
-                    <h1 class="title">Update your profile</h1>
-
-
+                <div id="divProfile">
+                    <h3 class="title">Update your profile</h3>
                     <form action="Controller" method="POST" id="register">
 
-                        <p><label for="username">Username:</br><input type="text" name="username" value="${user.username}" disabled/></label></p>       
+                    <p><label for="username">Username:</br><input type="text" name="username" value="${user.username}" disabled/></label></p>       
                     <p><label for="fullname">Full name:</br><input type="text" name="fullname" value="${user.userinfo.fullname}" /></label></p>
                     <p><label for="email">Email:</br><input type="text" name="email" value="${user.userinfo.email}" disabled /></label></p>
                     <p><label for="phone">Phone:</br><input type="text" name="phone" value="${user.userinfo.phone}" /> </label></p>
@@ -37,7 +34,10 @@
 
                 </form>
 
-            </article>
+            </div>
+
+
+
 
         </section>
 

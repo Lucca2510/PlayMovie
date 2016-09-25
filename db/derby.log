@@ -1,31 +1,14 @@
-Mon Sep 19 08:18:54 BRT 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+Sun Sep 25 17:50:47 BRT 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
 ----------------------------------------------------------------
-Mon Sep 19 08:18:54 BRT 2016:
- Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0157-422b-90d3-fffff74316c1
-no diretório de banco de dados C:\Temp\PlayMovie\db\ProjetoDB 
+Sun Sep 25 17:51:06 BRT 2016:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0157-631d-4ada-00007e461380
+no diretório de banco de dados C:\Users\NAGOYA\Documents\NetBeansProjects8.0.2\PlayMovie\db\ProjetoDB 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_40-b26
-user.dir=C:\Temp\glassfish-4.1\glassfish4\javadb
-os.name=Windows 7
+java.runtime.version=1.8.0_91-b14
+user.dir=C:\Users\NAGOYA\Downloads\glassfish4\javadb
+os.name=Windows 10
 os.arch=amd64
-os.version=6.1
-derby.system.home=C:\Temp\PlayMovie\db
-Carregador de classe do banco de dados iniciado - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Sep 19 08:19:08 BRT 2016:
-Encerrando a instância a816c00e-0157-422b-90d3-fffff74316c1
-Mon Sep 19 08:19:08 BRT 2016 Thread[DRDAConnThread_2,5,main] (DATABASE = ProjetoDB), (DRDAID = {2}), Banco de dados 'ProjetoDB' fechado.
-----------------------------------------------------------------
-Mon Sep 19 08:19:12 BRT 2016:
- Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância 560740aa-0157-422b-90d3-fffff74316c1
-no diretório de banco de dados C:\Temp\PlayMovie\db\ProjetoDB 
-
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_40-b26
-user.dir=C:\Temp\glassfish-4.1\glassfish4\javadb
-os.name=Windows 7
-os.arch=amd64
-os.version=6.1
-derby.system.home=C:\Temp\PlayMovie\db
+os.version=10.0
+derby.system.home=C:\Users\NAGOYA\Documents\NetBeansProjects8.0.2\PlayMovie\db
 Carregador de classe do banco de dados iniciado - derby.database.classpath=''

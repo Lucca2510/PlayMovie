@@ -19,10 +19,11 @@
         <c:import url="menu.jsp"></c:import>
 
             <section id="main">            
-                <article>
+                <div id="divError">
                     <h1 class="title">Error</h1>
+                    <img src="img/errorMSG.png" alt="about fernando" style="width: 650px;height:250px;"/>  
                     <p>${error}</p>
-                </article>
+                </div>
             </section>
 
         <c:import url="footer.jspf"></c:import>
