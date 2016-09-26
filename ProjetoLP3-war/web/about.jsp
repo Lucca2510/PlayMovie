@@ -24,13 +24,13 @@
                     
                 </div>
                 <div id='aboutG' class='about'>
-                    <img src="img/aboutG.png" alt="about Gabriel" style="width: 350px;height:350px;"/>                                    
+                     <img src="img/aboutL.png" alt="about Lucca" style="width: 350px;height:350px;"/>                                                    
                     <p><b>Nome:</b>Lucca Gabriel Dias</p>
                     <p><b>Idade: </b>19 anos</p>
                     <p><b>Hobbies: </b>Malhar e assistir filmes séries</p>
                 </div>
                 <div id='aboutL' class='about'>
-                    <img src="img/aboutL.png" alt="about Lucca" style="width: 350px;height:350px;"/>                                    
+                    <img src="img/aboutG.png" alt="about Gabriel" style="width: 350px;height:350px;"/>                                       
                     <p><b>Nome:</b>Gabriel Manfredi</p>
                     <p><b>Idade: </b>19 anos</p>
                     <p><b>Hobbies: </b>Jogar futebol, youtuber e construir coisas</p>
