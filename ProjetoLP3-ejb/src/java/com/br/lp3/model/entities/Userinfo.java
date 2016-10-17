@@ -6,7 +6,6 @@
 package com.br.lp3.model.entities;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -26,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author lgd25
+ * @author 31520731
  */
 @Entity
 @Table(name = "USERINFO")
@@ -116,11 +115,6 @@ public class Userinfo implements Serializable {
 
     public void setUserproj(Userproj userproj) {
         this.userproj = userproj;
-    }
-    
-    public String getDateChrome(){
-        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
-        return sdf.format(birthday);
     }
 
     @Override

@@ -6,6 +6,7 @@
 package com.br.lp3.model.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,14 +16,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author lgd25
+ * @author 31520731
  */
 @Entity
 @Table(name = "USERPROJ")
@@ -47,6 +50,10 @@ public class Userproj implements Serializable {
     private String password;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userproj")
     private Userinfo userinfo;
+    @OneToMany(mappedBy = "fkUser")
+    private Collection<Movielist> movielistCollection;
+    @OneToMany(mappedBy = "fkUser")
+    private Collection<Thumbup> thumbupCollection;
 
     public Userproj() {
     }
@@ -85,6 +92,24 @@ public class Userproj implements Serializable {
 
     public void setUserinfo(Userinfo userinfo) {
         this.userinfo = userinfo;
+    }
+
+    @XmlTransient
+    public Collection<Movielist> getMovielistCollection() {
+        return movielistCollection;
+    }
+
+    public void setMovielistCollection(Collection<Movielist> movielistCollection) {
+        this.movielistCollection = movielistCollection;
+    }
+
+    @XmlTransient
+    public Collection<Thumbup> getThumbupCollection() {
+        return thumbupCollection;
+    }
+
+    public void setThumbupCollection(Collection<Thumbup> thumbupCollection) {
+        this.thumbupCollection = thumbupCollection;
     }
 
     @Override

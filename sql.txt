@@ -16,3 +16,37 @@ phone varchar(15)
 );
 
 alter table userinfo add foreign key (id_userinfo) references userproj(id_userproj) on delete cascade;
+
+
+
+create table movielist(
+
+id_movielist bigint not null primary key generated always as identity (start with 1 increment by 1),
+fk_user bigint,
+name varchar(100)
+
+);
+
+alter table movielist add foreign key (fk_user) refferences userproj(id_userproj) on delete cascade;
+
+create table movieonlist(
+
+id_movieonlist bigint not null primary key generated always as identity(start with 1, increment by 1),
+fk_movielist bigint,
+fk_movie bigint
+
+);
+
+alter table movieonlist add foreign key (fk_movielist) refferences movielist(id_movielist) on delete cascade;
+
+
+create table thumbup(
+
+id_thumbup bigint not null primary key generated always as identity(start with 1, increment by 1),
+fk_user bigint,
+fk_movielist bigint
+
+);
+
+alter table thumbup add foreign key (fk_movielist) refferences movielist(id_movielist) on delete cascade;
+alter table thumbup add foreign key (fk_user) refferences userproj(id_userproj) on delete cascade;
