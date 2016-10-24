@@ -34,11 +34,15 @@ public class teste extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+            
            String uri = "http://www.omdbapi.com/?t=batman+v+superman&y=&plot=short&r=json";
            String content = MovieJSONParser.openURL(uri);
            Movie m = MovieJSONParser.parseFeed(content);
            out.println("<p>"+m+"</p>");
            out.println("<img src="+m.getPoster()+">");
+           
+           
         }
     }
 

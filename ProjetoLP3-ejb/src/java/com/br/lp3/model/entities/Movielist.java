@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Movielist.findAll", query = "SELECT m FROM Movielist m"),
     @NamedQuery(name = "Movielist.findByIdMovielist", query = "SELECT m FROM Movielist m WHERE m.idMovielist = :idMovielist"),
+    @NamedQuery(name = "Movielist.findByUser", query = "SELECT m FROM Movielist m WHERE m.fkUser = :fkUser"),
     @NamedQuery(name = "Movielist.findByName", query = "SELECT m FROM Movielist m WHERE m.name = :name")})
 public class Movielist implements Serializable {
     private static final long serialVersionUID = 1L;
