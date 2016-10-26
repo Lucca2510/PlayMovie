@@ -5,6 +5,8 @@
  */
 package com.br.lp3.controller.command;
 
+import com.br.lp3.json.MovieJSONParser;
+import com.br.lp3.model.entities.Movie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,7 +19,7 @@ public class MovieCommand implements Command {
     private HttpServletRequest request;
     private HttpServletResponse response;
     private String responsePage = "error.jsp";
-    
+
     @Override
     public void init(HttpServletRequest request, HttpServletResponse response) {
         this.response = response;
@@ -26,12 +28,25 @@ public class MovieCommand implements Command {
 
     @Override
     public void execute() {
-        
+        String action = request.getParameter("command").split("\\.")[1];
+        switch (action) {
+            case "searchByName":
+                String movieName = request.getParameter("movieName");
+
+                String uri = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&r=json";
+                String content = MovieJSONParser.openURL(uri);
+                Movie m = MovieJSONParser.parseFeed(content);
+                
+                request.getSession().setAttribute("selectedMovie", m);
+                responsePage = "movie.jsp";
+
+                break;
+        }
     }
 
     @Override
     public String getResponsePage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.responsePage;
     }
-    
+
 }

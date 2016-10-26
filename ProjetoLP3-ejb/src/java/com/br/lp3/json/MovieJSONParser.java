@@ -38,11 +38,10 @@ public class MovieJSONParser {
 
         try {
             URL url = new URL(uri);
-            Proxy proxy = new Proxy(Proxy.Type.HTTP,
-                    new InetSocketAddress("172.16.0.10", 3128));
-            HttpURLConnection con
-                    = (HttpURLConnection) url.openConnection(proxy);
-            //HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            //Proxy proxy = new Proxy(Proxy.Type.HTTP,new InetSocketAddress("172.16.0.10", 3128));
+            //HttpURLConnection con = (HttpURLConnection) url.openConnection(proxy);
+            
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
             int cod = con.getResponseCode();
 
             if (cod == 407) {

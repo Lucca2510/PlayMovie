@@ -34,6 +34,13 @@
                 </form>
                 <img src="img/mask2.png" alt="mascara" style="width:80px;height:80px;">
             </div>
+                <div>
+                    <form action="Controller" method="POST">
+                        <input type="text" name="movieName" placeholder="Movie Name" required/>
+                        <input type="hidden" name="command" value="Movie.searchByName"/>
+                        <input type="submit" value="Search"/>
+                    </form>
+                </div>
         </header>
     </c:when>
 
