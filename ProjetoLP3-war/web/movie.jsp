@@ -21,9 +21,25 @@
                 <div>
                     
                     <div >
-                        <img src="${selectedMovie.getPoster()}" alt="pipoca loka" style="width:150px;height:150px;"/>
-                        <p>teste</p>
-                    </div>
+                        <img id="poster" src="${selectedMovie.getPoster()}" alt="pipoca loka" style="width:150px;height:200px;"/>
+                   
+                        <p>Title: ${selectedMovie.getTitle()}</p>
+                        <p>Rated: ${selectedMovie.getRated()}</p>
+                        <p>Released: ${selectedMovie.getRelease()}</p>                        
+                        <p>Runtime: ${selectedMovie.getRuntime()}</p>
+                        <p>Genre: ${selectedMovie.getGenre()}</p>
+                        <p>Director: ${selectedMovie.getDirector()}</p>
+                        <p>Actors: ${selectedMovie.getActors()}</p>
+                        <p>Plot: ${selectedMovie.getPlot()}</p>
+                        <p>Metascore: ${selectedMovie.getMetascore()}</p>
+                        
+                        <c:choose>
+                            <c:when test="${user!=null}">
+                                <a href="Controller?command=Movielist.selectMovie"><button>Add to Movielist</button></a>
+                            </c:when>
+                            
+                        </c:choose>
+                    
                     
                     
                 </div>

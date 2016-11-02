@@ -39,10 +39,19 @@ public class MovieCommand implements Command {
                 
                 request.getSession().setAttribute("selectedMovie", m);
                 responsePage = "movie.jsp";
-
+                
                 break;
                 
-            
+            case "searchByImdbId":
+                String imdbId = request.getParameter("imdbId");
+                uri = "http://www.omdbapi.com/?i=" + imdbId + "&y=&plot=short&r=json";
+                content = MovieJSONParser.openURL(uri);
+                m = MovieJSONParser.parseFeed(content);
+                
+                request.getSession().setAttribute("selectedMovie", m);
+                responsePage = "movie.jsp";
+                
+                break;
         }
     }
 

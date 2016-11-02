@@ -13,7 +13,7 @@
                 <%--
                     <a href="index.jsp"><h3 id="textMenu">PLAY MOVIE</h3></a>
                 --%>
-                
+
                 <img src="img/mask1.png" alt="mascara" style="width:80px;height:80px;">
                 <a href="index.jsp"><img src="img/logoMenor.png" alt="coisas" style="width:80px;height:80px;"></a>
 
@@ -34,13 +34,7 @@
                 </form>
                 <img src="img/mask2.png" alt="mascara" style="width:80px;height:80px;">
             </div>
-                <div>
-                    <form action="Controller" method="POST">
-                        <input type="text" name="movieName" placeholder="Movie Name" required/>
-                        <input type="hidden" name="command" value="Movie.searchByName"/>
-                        <input type="submit" value="Search"/>
-                    </form>
-                </div>
+
         </header>
     </c:when>
 
@@ -62,5 +56,13 @@
         </header>
     </c:when>
 
+
 </c:choose>
+<div style="margin-left: 35%; margin-top: 10px;">
+    <form action="Controller" method="POST">
+        <input type="text" name="movieName" placeholder="Movie Name" required/>
+        <input type="hidden" name="command" value="Movie.searchByName"/>
+        <input type="submit" value="Search"/>
+    </form>
+</div>
 

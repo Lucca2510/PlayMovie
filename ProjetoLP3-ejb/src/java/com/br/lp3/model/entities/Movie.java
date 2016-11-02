@@ -5,7 +5,7 @@
  */
 package com.br.lp3.model.entities;
 
-import java.util.Date;
+
 
 /**
  *
@@ -15,7 +15,7 @@ public class Movie {
 
     private String title;    
     private String rated;
-    private Date release;
+    private String release;
     private String runtime;
     private String genre;
     private String director;
@@ -28,7 +28,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(String title, String rated, Date release, String runtime, String genre, String director, String actors, String plot, String poster, int metascore, String imdbID) {
+    public Movie(String title, String rated, String release, String runtime, String genre, String director, String actors, String plot, String poster, int metascore, String imdbID) {
         this.title = title;
         this.rated = rated;
         this.release = release;
@@ -58,11 +58,11 @@ public class Movie {
         this.rated = rated;
     }
 
-    public Date getRelease() {
+    public String getRelease() {
         return release;
     }
 
-    public void setRelease(Date release) {
+    public void setRelease(String release) {
         this.release = release;
     }
 

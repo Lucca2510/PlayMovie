@@ -79,13 +79,7 @@ public class MovieJSONParser {
         String title = root.getString("Title");
         String rated = root.getString("Rated");
         String releasedStr = root.getString("Released");
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Date released = new Date();
-        try {
-            released = sdf.parse(releasedStr);
-        } catch (ParseException ex) {
-            Logger.getLogger(MovieJSONParser.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
         String runtime = root.getString("Runtime");
         String genre = root.getString("Genre");
         String director = root.getString("Director");
@@ -95,7 +89,7 @@ public class MovieJSONParser {
         int metascore = Integer.parseInt(root.getString("Metascore"));
         String imdbID = root.getString("imdbID");
 
-        Movie m = new Movie(title, rated, released, runtime, genre, director, actors, plot, poster, metascore, imdbID);
+        Movie m = new Movie(title, rated, releasedStr, runtime, genre, director, actors, plot, poster, metascore, imdbID);
 
         return m;
     }
