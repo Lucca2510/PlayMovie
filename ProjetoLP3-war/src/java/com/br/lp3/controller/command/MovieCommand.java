@@ -34,23 +34,29 @@ public class MovieCommand implements Command {
                 String movieName = request.getParameter("movieName");
                 movieName = movieName.replace(" ", "+");
                 String uri = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&r=json";
+
                 String content = MovieJSONParser.openURL(uri);
-                Movie m = MovieJSONParser.parseFeed(content);
-                
-                request.getSession().setAttribute("selectedMovie", m);
-                responsePage = "movie.jsp";
-                
+
+                if (content.equals("movienotfound")) {
+                    request.getSession().setAttribute("error","Movie not Found!");
+
+                } else {
+                    Movie m = MovieJSONParser.parseFeed(content);
+
+                    request.getSession().setAttribute("selectedMovie", m);
+                    responsePage = "movie.jsp";
+                }
                 break;
-                
+
             case "searchByImdbId":
                 String imdbId = request.getParameter("imdbId");
                 uri = "http://www.omdbapi.com/?i=" + imdbId + "&y=&plot=short&r=json";
                 content = MovieJSONParser.openURL(uri);
-                m = MovieJSONParser.parseFeed(content);
-                
+                Movie m = MovieJSONParser.parseFeed(content);
+
                 request.getSession().setAttribute("selectedMovie", m);
                 responsePage = "movie.jsp";
-                
+
                 break;
         }
     }

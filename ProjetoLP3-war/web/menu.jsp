@@ -47,6 +47,7 @@
                 <ul>
                     <a href="home.jsp"><li>Home</li></a>
                     <a href="profile.jsp"><li>Profile</li></a>
+                    <a href="myMovieLists.jsp"><li>Movielists</li></a>
                     <a href="contatos.jsp"><li>Contacts</li></a>
                     <a href="about.jsp"><li>About</li></a>
                 </ul>

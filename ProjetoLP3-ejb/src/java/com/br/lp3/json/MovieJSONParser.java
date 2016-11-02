@@ -46,6 +46,7 @@ public class MovieJSONParser {
 
             if (cod == 407) {
                 System.out.println("Erro no proxy");
+                content = "movienotfound";
             } else if (cod == 200) {
                 BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 StringBuilder sb = new StringBuilder();
@@ -58,7 +59,7 @@ public class MovieJSONParser {
                 con.disconnect();
                 content = sb.toString();
             } else {
-                System.out.println("Erro diferente");
+                content = "movienotfound";
             }
 
         } catch (MalformedURLException ex) {
