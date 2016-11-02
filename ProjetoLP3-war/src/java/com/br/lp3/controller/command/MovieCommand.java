@@ -32,7 +32,7 @@ public class MovieCommand implements Command {
         switch (action) {
             case "searchByName":
                 String movieName = request.getParameter("movieName");
-
+                movieName = movieName.replace(" ", "+");
                 String uri = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&r=json";
                 String content = MovieJSONParser.openURL(uri);
                 Movie m = MovieJSONParser.parseFeed(content);
@@ -41,6 +41,8 @@ public class MovieCommand implements Command {
                 responsePage = "movie.jsp";
 
                 break;
+                
+            
         }
     }
 
