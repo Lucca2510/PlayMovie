@@ -36,12 +36,14 @@ public class MovieCommand implements Command {
                 String uri = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&r=json";
 
                 String content = MovieJSONParser.openURL(uri);
-
-                if (content.equals("movienotfound")) {
-                    request.getSession().setAttribute("error","Movie not Found!");
+                Movie m = MovieJSONParser.parseFeed(content);
+                
+                if (m==null) {
+                    request.getSession().setAttribute("error",MovieJSONParser.getError(content));
+                    
 
                 } else {
-                    Movie m = MovieJSONParser.parseFeed(content);
+                    
 
                     request.getSession().setAttribute("selectedMovie", m);
                     responsePage = "movie.jsp";
@@ -52,9 +54,9 @@ public class MovieCommand implements Command {
                 String imdbId = request.getParameter("imdbId");
                 uri = "http://www.omdbapi.com/?i=" + imdbId + "&y=&plot=short&r=json";
                 content = MovieJSONParser.openURL(uri);
-                Movie m = MovieJSONParser.parseFeed(content);
+                Movie m1 = MovieJSONParser.parseFeed(content);
 
-                request.getSession().setAttribute("selectedMovie", m);
+                request.getSession().setAttribute("selectedMovie", m1);
                 responsePage = "movie.jsp";
 
                 break;
