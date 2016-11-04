@@ -230,4 +230,11 @@ header div a input{
 #main div p{
     justify-content:center;
     display:flex;
+    color: black;
+}
+
+#main div p a{
+    justify-content:center;
+    display:flex;
+    color: black;
 }

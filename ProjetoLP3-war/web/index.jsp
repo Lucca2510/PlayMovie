@@ -24,15 +24,16 @@
                     <p>The site where you can build you movie lists!</p> 
                     <div >
                         <img src="img/pop.png" alt="pipoca loka" style="width:150px;height:150px;"/>
-                        <p>teste</p>
+                        <p>Create playlists with your favourite movies</p>
                     </div>
                     <div > 
                         <img src="img/ticket.png" alt="oscar" style="width:150px;height:150px;"/>
-                        <p>teste</p>
+                        <p>Share and enjoy your friend's playlist </p>
                     </div>
                     <div > 
                         <img src="img/oscar.png" alt="oscar" style="width:150px;height:150px;"/>
-                        <p>teste</p>
+                        <p> <a href="register.jsp"> Like it? So click here and register!</a> </p>
+                            
                     </div>
                 </div>
             </section>
