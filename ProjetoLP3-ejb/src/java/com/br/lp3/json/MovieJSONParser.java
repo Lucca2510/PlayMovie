@@ -38,10 +38,10 @@ public class MovieJSONParser {
 
         try {
             URL url = new URL(uri);
-            Proxy proxy = new Proxy(Proxy.Type.HTTP,new InetSocketAddress("172.16.0.10", 3128));
-            HttpURLConnection con = (HttpURLConnection) url.openConnection(proxy);
+            //Proxy proxy = new Proxy(Proxy.Type.HTTP,new InetSocketAddress("172.16.0.10", 3128));
+            //HttpURLConnection con = (HttpURLConnection) url.openConnection(proxy);
             
-            //HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
             int cod = con.getResponseCode();
 
             if (cod == 407) {
@@ -101,6 +101,29 @@ public class MovieJSONParser {
         return m;
 
     }
+    public static String parseName(String content) {
+        
+        
+
+        JsonReader reader = Json.createReader(new StringReader(content));
+        JsonObject root = reader.readObject();
+        reader.close();
+        Movie m = null;
+        
+        if(root.getString("Response").equals("True")){
+            
+        String title = root.getString("Title");
+       
+        return title;
+         
+
+        }
+        return null;
+
+    }
+    
+    
+    
     
     public static String getError(String content){
         JsonReader reader = Json.createReader(new StringReader(content));

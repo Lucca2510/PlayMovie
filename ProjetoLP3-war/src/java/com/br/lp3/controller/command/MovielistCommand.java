@@ -59,6 +59,17 @@ public class MovielistCommand implements Command{
                request.getSession().setAttribute("lists",u2.getMovielistCollection());
                
                break;
+               
+           case "viewmovielist":
+               
+               long id_movielist = Long.parseLong(request.getParameter("id_movielist"));
+               Movielist m = movielistDAO.readById(id_movielist);
+               request.getSession().setAttribute("selectedmovielist", m);
+               responsePage="selectedMovieList.jsp";
+               
+                       
+               break;
+            
        }
        
        

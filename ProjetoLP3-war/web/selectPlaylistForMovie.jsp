@@ -27,7 +27,7 @@
                         </form>
                     <c:forEach items="${user.getMovielistCollection()}"  var="movielist">
                         <ul style=" list-style: none; ">
-                            <a href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><li> ${movielist.getName()}  </li>  </a>                          
+                            <a href="Controller?command=movielist.addMovie&id_playlist=${movielist.getIdMovielist()}&idMovie=${selectedmovie.imdbId}><li> ${movielist.getName()}  </li>  </a>                          
                         </ul>                        
                     </c:forEach>
                         
@@ -39,4 +39,3 @@
     </body>
 
 </html>
-

@@ -5,6 +5,7 @@
  */
 package com.br.lp3.model.entities;
 
+import com.br.lp3.json.MovieJSONParser;
 import java.io.Serializable;
 import java.math.BigInteger;
 import javax.persistence.Basic;
@@ -39,14 +40,22 @@ public class Movieonlist implements Serializable {
     @Column(name = "ID_MOVIEONLIST")
     private Long idMovieonlist;
     @Column(name = "FK_MOVIE")
-    private BigInteger fkMovie;
+    private String fkMovie;
     @JoinColumn(name = "FK_MOVIELIST", referencedColumnName = "ID_MOVIELIST")
     @ManyToOne
     private Movielist fkMovielist;
 
     public Movieonlist() {
     }
-
+    
+    public String getMovieName(){
+        String movieName = null;
+            String content = MovieJSONParser.openURL("http://www.omdbapi.com/?i=" + fkMovie + "&y=&plot=short&r=json");
+            movieName = MovieJSONParser.parseName(content);
+        return movieName;
+    }
+    
+    
     public Movieonlist(Long idMovieonlist) {
         this.idMovieonlist = idMovieonlist;
     }
@@ -59,11 +68,11 @@ public class Movieonlist implements Serializable {
         this.idMovieonlist = idMovieonlist;
     }
 
-    public BigInteger getFkMovie() {
+    public String getFkMovie() {
         return fkMovie;
     }
 
-    public void setFkMovie(BigInteger fkMovie) {
+    public void setFkMovie(String fkMovie) {
         this.fkMovie = fkMovie;
     }
 

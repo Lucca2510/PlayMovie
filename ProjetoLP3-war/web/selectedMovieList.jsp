@@ -17,19 +17,15 @@
 
     <body>
         <c:import url="menu.jsp"></c:import>
-            <section id="main">
-                
+            <section id="main">            
                 <div>
                     <div>
-                        <form action="Controller" method="POST">
-                            <input type="hidden" name="command" value="Movielist.newMovielist"/>
-                            Movielist name : <input type="text" name="mvname"/> <input type="submit" value="Add"/>
-                        </form>
-                    <c:forEach items="${user.getMovielistCollection()}"  var="movielist">
+                        
+                       <c:forEach items="${selectedmovielist.getMovieonlistCollection()}"  var="movieonlist">
                         <ul style=" list-style: none; ">
-                            <a href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><li> ${movielist.getName()}  </li>  </a>                          
+                            <a href="Controller?command=movie.searchByName&movieName=${movielist.getMovieName()}"><li> ${movieonlist.getMovieName()}  </li>  </a>                          
                         </ul>                        
-                    </c:forEach>
+                    </c:forEach> 
                         
                     </div>
                 </div>
@@ -39,4 +35,3 @@
     </body>
 
 </html>
-
