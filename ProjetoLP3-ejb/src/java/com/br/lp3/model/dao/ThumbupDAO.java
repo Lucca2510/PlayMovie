@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author lgd25
  */
 public class ThumbupDAO implements GenericDAO<Thumbup>{
-     @PersistenceContext(unitName = "ProjetoLP3-ejbPU", type = PersistenceContextType.TRANSACTION)
+     @PersistenceContext(unitName = "ProjetoLP3-ejbPU", type = PersistenceContextType.EXTENDED)
     private EntityManager em;
 
     @Override

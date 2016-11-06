@@ -23,7 +23,7 @@ import javax.persistence.Query;
 @Stateful
 @LocalBean
 public class MovielistDAO implements GenericDAO<Movielist>{
-    @PersistenceContext(unitName = "ProjetoLP3-ejbPU", type = PersistenceContextType.TRANSACTION)
+    @PersistenceContext(unitName = "ProjetoLP3-ejbPU", type = PersistenceContextType.EXTENDED)
     private EntityManager em;
 
     @Override

@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,7 +28,7 @@
                         </form>
                     <c:forEach items="${user.getMovielistCollection()}"  var="movielist">
                         <ul style=" list-style: none; ">
-                            <a href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><li> ${movielist.getName()}  </li>  </a>                          
+                            <a href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><li> ${movielist.getName()}  </li>  </a>  <a href="Controller?command=Movielist.deletemovielist&id_movielist=${movielist.getIdMovielist()}"><i class="material-icons">delete</i></a>                        
                         </ul>                        
                     </c:forEach>
                         

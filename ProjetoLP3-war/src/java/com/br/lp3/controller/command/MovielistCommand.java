@@ -9,6 +9,7 @@ import com.br.lp3.model.dao.MovielistDAO;
 import com.br.lp3.model.dao.UserprojDAO;
 import com.br.lp3.model.entities.Movielist;
 import com.br.lp3.model.entities.Userproj;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -21,59 +22,74 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lgd25
  */
-public class MovielistCommand implements Command{
+public class MovielistCommand implements Command {
+
     UserprojDAO userprojDAO = lookupUserprojDAOBean();
     MovielistDAO movielistDAO = lookupMovielistDAOBean();
     private HttpServletRequest request;
     private HttpServletResponse response;
     private String responsePage = "error.jsp";
-    
 
     @Override
     public void init(HttpServletRequest request, HttpServletResponse response) {
-        this.request=request;
-        this.response=response;
+        this.request = request;
+        this.response = response;
     }
 
     @Override
     public void execute() {
-       String action = request.getParameter("command").split("\\.")[1];
-       switch(action){
-           case "newMovielist":
-               Userproj u = (Userproj)request.getSession().getAttribute("user");
-               Movielist mvlist = new Movielist();
-               String mvname = request.getParameter("mvname");
-               mvlist.setName(mvname);
-               mvlist.setFkUser(u);
-               
-               u.getMovielistCollection().add(mvlist);
-               movielistDAO.create(mvlist);
-               userprojDAO.update(u);
-               request.getSession().setAttribute("user", u);
-               responsePage = "myMovieLists.jsp";
-               break;
-               
-           case "showLists":
-               
-               Userproj u2 = (Userproj)request.getSession().getAttribute("user");
-               request.getSession().setAttribute("lists",u2.getMovielistCollection());
-               
-               break;
-               
-           case "viewmovielist":
-               
-               long id_movielist = Long.parseLong(request.getParameter("id_movielist"));
-               Movielist m = movielistDAO.readById(id_movielist);
-               request.getSession().setAttribute("selectedmovielist", m);
-               responsePage="selectedMovieList.jsp";
-               
-                       
-               break;
-            
-       }
-       
-       
-       
+        String action = request.getParameter("command").split("\\.")[1];
+        switch (action) {
+            case "newMovielist":
+                Userproj u = (Userproj) request.getSession().getAttribute("user");
+                Movielist mvlist = new Movielist();
+                String mvname = request.getParameter("mvname");
+                mvlist.setName(mvname);
+                mvlist.setFkUser(u);
+
+                u.getMovielistCollection().add(mvlist);
+                movielistDAO.create(mvlist);
+                userprojDAO.update(u);
+                request.getSession().setAttribute("user", u);
+                responsePage = "myMovieLists.jsp";
+                break;
+
+            case "showLists":
+
+                Userproj u2 = (Userproj) request.getSession().getAttribute("user");
+                request.getSession().setAttribute("lists", u2.getMovielistCollection());
+
+                break;
+
+            case "viewmovielist":
+
+                long id_movielist = Long.parseLong(request.getParameter("id_movielist"));
+                Movielist m = movielistDAO.readById(id_movielist);
+                request.getSession().setAttribute("selectedmovielist", m);
+                responsePage = "selectedMovieList.jsp";
+
+                break;
+
+            case "deletemovielist":
+                long id_movielist2 = Long.parseLong(request.getParameter("id_movielist"));
+                Movielist m2 = movielistDAO.readById(id_movielist2);
+                movielistDAO.delete(m2);
+                Userproj uaux3 = (Userproj)request.getSession().getAttribute("user");
+                Userproj u3 = userprojDAO.readById(uaux3.getIdUserproj());
+                request.getSession().setAttribute("user", u3);
+                responsePage = "myMovieLists.jsp";
+                break;
+                
+            case "getAll":
+                
+                List<Movielist> movielists= movielistDAO.read();
+                 request.getSession().setAttribute("allmovielists", movielists);
+                responsePage = "home.jsp";
+                
+                break;
+
+        }
+
     }
 
     @Override

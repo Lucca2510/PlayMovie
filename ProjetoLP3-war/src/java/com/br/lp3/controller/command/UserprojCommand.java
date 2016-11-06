@@ -5,12 +5,15 @@
  */
 package com.br.lp3.controller.command;
 
+import com.br.lp3.model.dao.MovielistDAO;
 import com.br.lp3.model.dao.UserprojDAO;
+import com.br.lp3.model.entities.Movielist;
 import com.br.lp3.model.entities.Userinfo;
 import com.br.lp3.model.entities.Userproj;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -24,8 +27,10 @@ import javax.servlet.http.HttpServletResponse;
  * @author lgd25
  */
 public class UserprojCommand implements Command {
+    MovielistDAO movielistDAO = lookupMovielistDAOBean();
 
     UserprojDAO userprojDAO = lookupUserprojDAOBean();
+    
 
     private HttpServletRequest request;
     private HttpServletResponse response;
@@ -59,6 +64,9 @@ public class UserprojCommand implements Command {
                 } else if (!password.equals(useraux.getPassword())) {
                     request.getSession().setAttribute("error", "Wrong password");
                 } else {
+                    List<Movielist> movielists= movielistDAO.read();
+                    request.getSession().setAttribute("allmovielists", movielists);
+               
                     request.getSession().setAttribute("user", useraux);
                     this.responsePage = "home.jsp";
                 }
@@ -149,6 +157,16 @@ public class UserprojCommand implements Command {
         try {
             Context c = new InitialContext();
             return (UserprojDAO) c.lookup("java:global/ProjetoLP3/ProjetoLP3-ejb/UserprojDAO!com.br.lp3.model.dao.UserprojDAO");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
+    }
+
+    private MovielistDAO lookupMovielistDAOBean() {
+        try {
+            Context c = new InitialContext();
+            return (MovielistDAO) c.lookup("java:global/ProjetoLP3/ProjetoLP3-ejb/MovielistDAO!com.br.lp3.model.dao.MovielistDAO");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);

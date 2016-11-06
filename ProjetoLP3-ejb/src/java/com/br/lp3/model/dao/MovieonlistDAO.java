@@ -21,7 +21,7 @@ import javax.persistence.Query;
 @Stateful
 @LocalBean
 public class MovieonlistDAO implements GenericDAO<Movieonlist>{
-    @PersistenceContext(unitName = "ProjetoLP3-ejbPU", type = PersistenceContextType.TRANSACTION)
+    @PersistenceContext(unitName = "ProjetoLP3-ejbPU", type = PersistenceContextType.EXTENDED)
     EntityManager em;
 
     @Override

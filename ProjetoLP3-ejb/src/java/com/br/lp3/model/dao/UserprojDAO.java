@@ -24,7 +24,7 @@ import javax.persistence.Query;
 @LocalBean
 public class UserprojDAO implements GenericDAO<Userproj> {
 
-    @PersistenceContext(unitName = "ProjetoLP3-ejbPU", type = PersistenceContextType.TRANSACTION)
+    @PersistenceContext(unitName = "ProjetoLP3-ejbPU", type = PersistenceContextType.EXTENDED)
     private EntityManager em;
 
     @Override
