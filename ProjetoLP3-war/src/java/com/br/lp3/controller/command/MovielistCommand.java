@@ -51,6 +51,8 @@ public class MovielistCommand implements Command {
                 movielistDAO.create(mvlist);
                 userprojDAO.update(u);
                 request.getSession().setAttribute("user", u);
+                List<Movielist> movielistsbyuser= movielistDAO.readByUser((Userproj)request.getSession().getAttribute("user"));
+                 request.getSession().setAttribute("movielistsbyuser", movielistsbyuser);
                 responsePage = "myMovieLists.jsp";
                 break;
 
@@ -76,8 +78,8 @@ public class MovielistCommand implements Command {
                 movielistDAO.delete(m2);
                 Userproj uaux3 = (Userproj)request.getSession().getAttribute("user");
                 Userproj u3 = userprojDAO.readById(uaux3.getIdUserproj());
-                request.getSession().setAttribute("user", u3);
-                responsePage = "myMovieLists.jsp";
+                request.getSession().setAttribute("user", u3);               
+                responsePage = "Controller?command=Movielist.getByUser";
                 break;
                 
             case "getAll":
@@ -85,6 +87,14 @@ public class MovielistCommand implements Command {
                 List<Movielist> movielists= movielistDAO.read();
                  request.getSession().setAttribute("allmovielists", movielists);
                 responsePage = "home.jsp";
+                
+                break;
+                
+            case "getByUser":
+                
+                 List<Movielist> movielistsbyuser2= movielistDAO.readByUser((Userproj)request.getSession().getAttribute("user"));
+                 request.getSession().setAttribute("movielistsbyuser", movielistsbyuser2);
+                responsePage = "myMovieLists.jsp";
                 
                 break;
 

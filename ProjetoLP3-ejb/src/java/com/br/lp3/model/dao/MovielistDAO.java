@@ -45,6 +45,13 @@ public class MovielistDAO implements GenericDAO<Movielist>{
     }
     
     
+    public List<Movielist> readByUser(Userproj u){
+        
+        Query query = em.createNamedQuery("Movielist.findByUser",Movielist.class).setParameter("fkUser", u);
+        return query.getResultList();
+        
+    }
+    
 
     @Override
     public void update(Movielist e) {

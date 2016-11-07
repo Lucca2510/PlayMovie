@@ -20,18 +20,22 @@
         <c:import url="menu.jsp"></c:import>
 
             <section id="main">            
-                <article>
+                
                 <c:if test="${user==null}">
                     <c:redirect url="index.jsp"></c:redirect>
                 </c:if>
-                    <h1 class="title">Bem Vindo, ${user.getUsername()}!</h1>
-                </article>
-                 <c:forEach items="${allmovielists}"  var="movielist">
+            
+            <div>
+                <h1 class="title">Bem Vindo, ${user.getUsername()}!</h1>
+                <div>
+                    <c:forEach items="${allmovielists}"  var="movielist">
                         <ul style=" list-style: none; ">
                             <a href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><li> ${movielist.getName()}  </li>  </a>                
                         </ul>                        
                     </c:forEach>
-            </section>
+                </div>
+            </div>
+        </section>
 
         <c:import url="footer.jspf"></c:import>
 

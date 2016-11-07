@@ -35,7 +35,7 @@
                         
                         <c:choose>
                             <c:when test="${user!=null}">
-                                <a href="Controller?command=Movielist.addMovie"><button>Add to Movielist</button></a>
+                                <a href="Controller?command=Movielist.addMovie"><button class="button">Add to Movielist</button></a>
                             </c:when>
                             
                         </c:choose>

@@ -45,13 +45,13 @@
                 <img src="img/mask1.png" alt="mascara" style="width:80px;height:80px;">
                 <a href="home.jsp"><img src="img/logoMenor.png" alt="coisas" style="width:80px;height:80px;"></a>
                 <ul>
-                    <a href="home.jsp"><li>Home</li></a>
+                    <a href="Controller?command=Movielist.getAll"><li>Home</li></a>
                     <a href="profile.jsp"><li>Profile</li></a>
-                    <a href="myMovieLists.jsp"><li>Movielists</li></a>
+                    <a href="Controller?command=Movielist.getByUser"><li>Movielists</li></a>
                     <a href="contatos.jsp"><li>Contacts</li></a>
                     <a href="about.jsp"><li>About</li></a>
                 </ul>
-                <a href="Controller?command=Userproj.logout"><input type="button" value="Logout"/><br></a>
+                <a href="Controller?command=Userproj.logout"><input type="button" class="button" value="Logout"/><br></a>
                 <img src="img/mask2.png" alt="mascara" style="width:80px;height:80px;"/>
             </div>
         </header>
