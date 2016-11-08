@@ -23,7 +23,7 @@
                         
                        <c:forEach items="${selectedmovielist.getMovieonlistCollection()}"  var="movieonlist">
                         <ul style=" list-style: none; ">
-                            <a href="Controller?command=movie.searchByName&movieName=${movielist.getMovieName()}"><li> ${movieonlist.getMovieName()}  </li>  </a>                          
+                            <a href="Controller?command=Movie.searchByName&movieName=${movieonlist.getMovieName()}"><li> ${movieonlist.getMovieName()}  </li>  </a>                          
                         </ul>                        
                     </c:forEach> 
                         

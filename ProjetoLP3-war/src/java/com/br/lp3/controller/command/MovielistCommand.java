@@ -6,8 +6,11 @@
 package com.br.lp3.controller.command;
 
 import com.br.lp3.model.dao.MovielistDAO;
+import com.br.lp3.model.dao.MovieonlistDAO;
 import com.br.lp3.model.dao.UserprojDAO;
+import com.br.lp3.model.entities.Movie;
 import com.br.lp3.model.entities.Movielist;
+import com.br.lp3.model.entities.Movieonlist;
 import com.br.lp3.model.entities.Userproj;
 import java.util.List;
 import java.util.logging.Level;
@@ -23,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author lgd25
  */
 public class MovielistCommand implements Command {
+    MovieonlistDAO movieonlistDAO = lookupMovieonlistDAOBean();
 
     UserprojDAO userprojDAO = lookupUserprojDAOBean();
     MovielistDAO movielistDAO = lookupMovielistDAOBean();
@@ -97,7 +101,35 @@ public class MovielistCommand implements Command {
                 responsePage = "myMovieLists.jsp";
                 
                 break;
-
+                
+            case "addMovie":
+                
+                Movie m3 = (Movie)request.getSession().getAttribute("selectedMovie");
+                request.getSession().setAttribute("movieforplaylist", m3);
+                 List<Movielist> movielistsbyuser3= movielistDAO.readByUser((Userproj)request.getSession().getAttribute("user"));
+                 request.getSession().setAttribute("movielistsbyuser", movielistsbyuser3);
+                responsePage = "selectPlaylistForMovie.jsp";
+                
+                break;
+            
+            case "addMovieToList":
+                
+                
+                Movie m4 =(Movie)request.getSession().getAttribute("selectedMovie");
+                long id_list = Long.parseLong(request.getParameter("id_movielist"));
+                Movielist m5 = movielistDAO.readById(id_list);
+                
+                Movieonlist mvon = new Movieonlist();
+                mvon.setFkMovie(m4.getImdbID());
+                mvon.setFkMovielist(m5);
+                movieonlistDAO.create(mvon);
+                
+                
+                request.getSession().setAttribute("user", userprojDAO.readById(m5.getFkUser().getIdUserproj()));
+                request.getSession().setAttribute("success", "Movie added with success!");
+                responsePage = "home.jsp";
+                
+                break;
         }
 
     }
@@ -121,6 +153,16 @@ public class MovielistCommand implements Command {
         try {
             Context c = new InitialContext();
             return (UserprojDAO) c.lookup("java:global/ProjetoLP3/ProjetoLP3-ejb/UserprojDAO!com.br.lp3.model.dao.UserprojDAO");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
+    }
+
+    private MovieonlistDAO lookupMovieonlistDAOBean() {
+        try {
+            Context c = new InitialContext();
+            return (MovieonlistDAO) c.lookup("java:global/ProjetoLP3/ProjetoLP3-ejb/MovieonlistDAO!com.br.lp3.model.dao.MovieonlistDAO");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
