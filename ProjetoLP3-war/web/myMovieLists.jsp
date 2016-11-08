@@ -21,14 +21,15 @@
             <section id="main">
                 
                 <div>
-                    <div style="padding: 10px; border: 1px solid black;">
+                    <h1>My movie lists</h1>
+                    <div style="padding: 10px;">
                         <form action="Controller" method="POST">
                             <input type="hidden" name="command" value="Movielist.newMovielist"/>
                             Movielist name : <input type="text" name="mvname"/> <input type="submit" value="Add"/>
                         </form>
                     <c:forEach items="${movielistsbyuser}"  var="movielist">
-                        <ul style=" list-style: none; ">
-                            <a style="color:black;" href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><li> ${movielist.getName()}  </li>  </a>  <a href="Controller?command=Movielist.deletemovielist&id_movielist=${movielist.getIdMovielist()}"><button class="button"><i class="material-icons">delete</i></button></a>                        
+                        <ul style=" list-style: none; display: flex; align-items: center">
+                            <li style=" width: 300px; border-bottom: 1px solid #a1a1a1;padding: 10px;"><a style="color:black;" href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}">${movielist.getName()}&nbsp;&nbsp;&nbsp;<button class="button"><i class="material-icons">visibility</i></button> </a>  <a href="Controller?command=Movielist.deletemovielist&id_movielist=${movielist.getIdMovielist()}"> <button class="button"><i class="material-icons">delete</i></button></a></li>                        
                         </ul>                        
                     </c:forEach>
                         

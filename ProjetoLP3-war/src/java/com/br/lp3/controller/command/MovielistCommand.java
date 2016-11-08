@@ -122,9 +122,12 @@ public class MovielistCommand implements Command {
                 Movieonlist mvon = new Movieonlist();
                 mvon.setFkMovie(m4.getImdbID());
                 mvon.setFkMovielist(m5);
-                movieonlistDAO.create(mvon);
+                m5.getMovieonlistCollection().add(mvon);
+                movielistDAO.update(m5);
                 
-                
+               
+                request.getSession().setAttribute("movielistsbyuser", movielistDAO.readById(id_list));
+                request.getSession().setAttribute("allmovielists", movielistDAO.read());
                 request.getSession().setAttribute("user", userprojDAO.readById(m5.getFkUser().getIdUserproj()));
                 request.getSession().setAttribute("success", "Movie added with success!");
                 responsePage = "home.jsp";

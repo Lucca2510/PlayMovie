@@ -20,10 +20,11 @@
             <section id="main">            
                 <div>
                     <div>
-                        
+                        <h2>${selectedmovielist.getName()}</h2>
+                        <p style=" border-bottom: 2px solid #a1a1a1;margin: 10px;">Created by: ${selectedmovielist.getFkUser().getUsername()}</p>
                        <c:forEach items="${selectedmovielist.getMovieonlistCollection()}"  var="movieonlist">
-                        <ul style=" list-style: none; ">
-                            <a href="Controller?command=Movie.searchByName&movieName=${movieonlist.getMovieName()}"><li> ${movieonlist.getMovieName()}  </li>  </a>                          
+                        <ul style=" list-style: none; display:flex; align-items:center;">
+                            <a  style="color: black; margin: 5px; " href="Controller?command=Movie.searchByName&movieName=${movieonlist.getMovieName()}"><li> ${movieonlist.getMovieName()}  </li>  </a>                          
                         </ul>                        
                     </c:forEach> 
                         

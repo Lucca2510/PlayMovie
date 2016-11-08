@@ -21,10 +21,10 @@
                 <div>
                     <img src="img/PLAY MOVIE - LOGO.png" alt="coisas" style="width:600px;height:600px;"/><br>             
                     <h1><b>Welcome to PlayMovie!</b></h1>
-                    <p>The site where you can build you movie lists!</p> 
+                    <p>The site where you can create and share your movie lists!</p> 
                     <div >
                         <img src="img/pop.png" alt="pipoca loka" style="width:150px;height:150px;"/>
-                        <p>Create playlists with your favourite movies</p>
+                        <p>Create movie lists with your favourite movies</p>
                     </div>
                     <div > 
                         <img src="img/ticket.png" alt="oscar" style="width:150px;height:150px;"/>

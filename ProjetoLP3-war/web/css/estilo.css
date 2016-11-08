@@ -127,7 +127,7 @@ form input[type="submit"]{
 
 /*-------------------------------*/
 
-ul li:hover{
+header div ul li:hover{
     color: white;
     background-color: grey;
 }
@@ -150,7 +150,7 @@ nav ul li{
     padding: 10px 40px;
     background: #dddddd;
     width: 300px;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 .about{
@@ -158,9 +158,9 @@ nav ul li{
     justify-content:center;
     display:flex;
     background: white;
-    border: 3px solid black;
+     border: 2px solid #a1a1a1;
     text-align: center;
-    border-radius: 30px;
+    border-radius: 5px;
     width:900px;
 }
 
@@ -169,8 +169,8 @@ nav ul li{
     text-align: center;
     width: 300px;
     background-color: #dddddd;
-    border: 2px solid black;
-    border-radius: 30px;
+    border: 2px solid #a1a1a1;
+    border-radius: 5px;
 }
 
 
@@ -183,8 +183,9 @@ body section div div {
     margin-top:25px;
     width: 100%; 
     background-color: #dddddd;
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 2px solid #a1a1a1;
+    border-radius: 5px;
+    
     
 }
 

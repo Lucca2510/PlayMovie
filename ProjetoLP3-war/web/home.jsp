@@ -29,11 +29,13 @@
                 </c:if>
             
             <div>
-                <h1 class="title">Bem Vindo, ${user.getUsername()}!</h1>
+                <h1 class="title">Welcome, ${user.getUsername()}!</h1>
+                <h3>This are the most popular movie lists on our site</h3>
                 <div>
+                    
                     <c:forEach items="${allmovielists}"  var="movielist">
                         <ul style=" list-style: none; ">
-                            <a href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><li> ${movielist.getName()}  </li>  </a>                
+                            <a style="color: black;" href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><li> ${movielist.getName()}  </li>  </a>                
                         </ul>                        
                     </c:forEach>
                 </div>

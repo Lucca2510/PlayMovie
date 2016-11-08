@@ -38,10 +38,10 @@ public class MovieJSONParser {
 
         try {
             URL url = new URL(uri);
-            Proxy proxy = new Proxy(Proxy.Type.HTTP,new InetSocketAddress("172.16.0.10", 3128));
-            HttpURLConnection con = (HttpURLConnection) url.openConnection(proxy);
-            
-            //HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            //Proxy proxy = new Proxy(Proxy.Type.HTTP,new InetSocketAddress("172.16.0.10", 3128));
+            //HttpURLConnection con = (HttpURLConnection) url.openConnection(proxy);
+
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
             int cod = con.getResponseCode();
 
             if (cod == 407) {
@@ -72,60 +72,59 @@ public class MovieJSONParser {
     }
 
     public static Movie parseFeed(String content) {
-        
-        
 
         JsonReader reader = Json.createReader(new StringReader(content));
         JsonObject root = reader.readObject();
         reader.close();
         Movie m = null;
-        
-        if(root.getString("Response").equals("True")){
-            
-        String title = root.getString("Title");
-        String rated = root.getString("Rated");
-        String releasedStr = root.getString("Released");
-        
-        String runtime = root.getString("Runtime");
-        String genre = root.getString("Genre");
-        String director = root.getString("Director");
-        String actors = root.getString("Actors");
-        String plot = root.getString("Plot");
-        String poster = root.getString("Poster");
-        int metascore = Integer.parseInt(root.getString("Metascore"));
-        String imdbID = root.getString("imdbID");
 
-         m = new Movie(title, rated, releasedStr, runtime, genre, director, actors, plot, poster, metascore, imdbID);
+        if (root.getString("Response").equals("True")) {
+
+            String title = root.getString("Title");
+            String rated = root.getString("Rated");
+            String releasedStr = root.getString("Released");
+
+            String runtime = root.getString("Runtime");
+            String genre = root.getString("Genre");
+            String director = root.getString("Director");
+            String actors = root.getString("Actors");
+            String plot = root.getString("Plot");
+            String poster = root.getString("Poster");
+            int metascore;
+            if (root.getString("Metascore").equals("N/A")) {
+                  metascore = -1;
+            } else {
+
+                 metascore = Integer.parseInt(root.getString("Metascore"));
+            }
+            String imdbID = root.getString("imdbID");
+
+            m = new Movie(title, rated, releasedStr, runtime, genre, director, actors, plot, poster, metascore, imdbID);
 
         }
         return m;
 
     }
+
     public static String parseName(String content) {
-        
-        
 
         JsonReader reader = Json.createReader(new StringReader(content));
         JsonObject root = reader.readObject();
         reader.close();
         Movie m = null;
-        
-        if(root.getString("Response").equals("True")){
-            
-        String title = root.getString("Title");
-       
-        return title;
-         
+
+        if (root.getString("Response").equals("True")) {
+
+            String title = root.getString("Title");
+
+            return title;
 
         }
         return null;
 
     }
-    
-    
-    
-    
-    public static String getError(String content){
+
+    public static String getError(String content) {
         JsonReader reader = Json.createReader(new StringReader(content));
         JsonObject root = reader.readObject();
         reader.close();
