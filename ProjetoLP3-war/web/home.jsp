@@ -21,7 +21,7 @@
 
             <section id="main">            
                 <c:if test="${success!=null}">
-                    <h1 style="color: greenyellow"> ${success}</h1>
+                    <p><h1 style="color: greenyellow"> ${success}</h1></p>
                     <c:set var="success" value="" scope="session" ></c:set>
                 </c:if>
                 <c:if test="${user==null}">

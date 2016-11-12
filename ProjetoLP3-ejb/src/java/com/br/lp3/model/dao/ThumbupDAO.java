@@ -7,6 +7,8 @@ package com.br.lp3.model.dao;
 
 import com.br.lp3.model.entities.Thumbup;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
@@ -16,6 +18,8 @@ import javax.persistence.Query;
  *
  * @author lgd25
  */
+@Stateful
+@LocalBean
 public class ThumbupDAO implements GenericDAO<Thumbup>{
      @PersistenceContext(unitName = "ProjetoLP3-ejbPU", type = PersistenceContextType.EXTENDED)
     private EntityManager em;

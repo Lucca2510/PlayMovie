@@ -1,7 +1,7 @@
-Tue Nov 08 20:36:22 BRST 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+Fri Nov 11 21:10:43 BRST 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
 ----------------------------------------------------------------
-Tue Nov 08 20:36:43 BRST 2016:
- Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0158-4615-c620-0000718722cd
+Fri Nov 11 21:11:16 BRST 2016:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0158-55a8-45da-0000718722cd
 no diretório de banco de dados C:\Users\lgd25\Documents\NetBeansProjects\PlayMovie\db\ProjetoDB 
 
 java.vendor=Oracle Corporation

@@ -19,7 +19,7 @@
     <body>
         <c:import url="menu.jsp"></c:import>
             <section id="main">
-                
+
                 <div>
                     <h1>My movie lists</h1>
                     <div style="padding: 10px;">
@@ -27,15 +27,22 @@
                             <input type="hidden" name="command" value="Movielist.newMovielist"/>
                             Movielist name : <input type="text" name="mvname"/> <input type="submit" value="Add"/>
                         </form>
-                    <c:forEach items="${movielistsbyuser}"  var="movielist">
-                        <ul style=" list-style: none; display: flex; align-items: center">
-                            <li style=" width: 300px; border-bottom: 1px solid #a1a1a1;padding: 10px;"><a style="color:black;" href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}">${movielist.getName()}&nbsp;&nbsp;&nbsp;<button class="button"><i class="material-icons">visibility</i></button> </a>  <a href="Controller?command=Movielist.deletemovielist&id_movielist=${movielist.getIdMovielist()}"> <button class="button"><i class="material-icons">delete</i></button></a></li>                        
-                        </ul>                        
-                    </c:forEach>
-                        
-                    </div>
+                        <table class="tablelist">
+                            <tr>
+                                <th>Name</th>
+                                <th>View</th>
+                                <th>Delete</th>
+                            </tr>
+                        <c:forEach items="${movielistsbyuser}"  var="movielist">
+                            <tr>
+                                <td>${movielist.getName()}</td><td> <a style="color:black;" href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><button class="button"><i class="material-icons">visibility</i></button> </a></td>  <td><a href="Controller?command=Movielist.deletemovielist&id_movielist=${movielist.getIdMovielist()}"> <button class="button"><i class="material-icons">delete</i></button></a></td>                        
+                            </tr>                      
+                        </c:forEach>
+                    </table>
+
                 </div>
-            </section>
+            </div>
+        </section>
         <c:import url="footer.jspf"></c:import>
 
     </body>

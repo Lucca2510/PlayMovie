@@ -26,12 +26,18 @@
                             <input type="hidden" name="command" value="Movielist.newMovielist"/>
                             Movielist name : <input type="text" name="mvname"/> <input type="submit" value="Add"/>
                         </form>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Add</th>
+                            </tr>
                     <c:forEach items="${movielistsbyuser}"  var="movielist">
-                        <ul style=" list-style: none; ">
-                            <a style="color:black;" href="Controller?command=Movielist.viewmovielist&id_movielist=${movielist.getIdMovielist()}"><li> ${movielist.getName()}  </li>  </a>  <a href="Controller?command=Movielist.addMovieToList&id_movielist=${movielist.getIdMovielist()}"><button class="button"><i class="material-icons">done</i></button></a>                        
-                        </ul>                        
+                        <tr>
+                            <td>${movielist.getName()}</td>      <td><a href="Controller?command=Movielist.addMovieToList&id_movielist=${movielist.getIdMovielist()}"><button class="button"><i class="material-icons">done</i></button></a></td>                        
+                        </tr>
+                            
                     </c:forEach>
-                        
+                        </table>
                     </div>
                 </div>
             </section>
