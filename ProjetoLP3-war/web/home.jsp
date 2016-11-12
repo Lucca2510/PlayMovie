@@ -20,6 +20,8 @@
         <c:import url="menu.jsp"></c:import>
 
             <section id="main">            
+            
+            <div>
                 <c:if test="${success!=null}">
                     <p><h1 style="color: greenyellow"> ${success}</h1></p>
                     <c:set var="success" value="" scope="session" ></c:set>
@@ -27,8 +29,6 @@
                 <c:if test="${user==null}">
                     <c:redirect url="index.jsp"></c:redirect>
                 </c:if>
-            
-            <div>
                 <h1 class="title">Welcome, ${user.getUsername()}!</h1>
                 <h3>This are the most popular movie lists on our site</h3>
                 <div>

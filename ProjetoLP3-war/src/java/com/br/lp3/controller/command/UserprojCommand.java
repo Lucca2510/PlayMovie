@@ -140,8 +140,8 @@ public class UserprojCommand implements Command {
                 userprojDAO.update(usernew2);
                 request.getSession().setAttribute("user", usernew2);
                 
-                
-                responsePage="index.jsp";
+                request.getSession().setAttribute("success", "Your profile has been updated");
+                responsePage="home.jsp";
 
                 break;
 
