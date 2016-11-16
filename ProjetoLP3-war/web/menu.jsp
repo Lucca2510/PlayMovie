@@ -60,6 +60,7 @@
 
 </c:choose>
 <div style="margin-left: 35%; margin-top: 10px;">
+    <img src="img/search.png" alt="roda-roda" style="width:25px;height:25px;float: left;margin-right: 10px;">
     <form action="Controller" method="POST">
         <input type="text" name="movieName" placeholder="Movie Name" required/>
         <input type="hidden" name="command" value="Movie.searchByName"/>

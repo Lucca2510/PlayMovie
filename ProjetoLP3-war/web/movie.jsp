@@ -19,31 +19,31 @@
         <c:import url="menu.jsp"></c:import>
             <section id="main">            
                 <div>
-                    
+
                     <div >
                         <img id="poster" src="${selectedMovie.getPoster()}" alt="pipoca loka" style="width:150px;height:200px;"/>
-                   
-                        <p>Title: ${selectedMovie.getTitle()}</p>
-                        <p>Rated: ${selectedMovie.getRated()}</p>
-                        <p>Released: ${selectedMovie.getRelease()}</p>                        
-                        <p>Runtime: ${selectedMovie.getRuntime()}</p>
-                        <p>Genre: ${selectedMovie.getGenre()}</p>
-                        <p>Director: ${selectedMovie.getDirector()}</p>
-                        <p>Actors: ${selectedMovie.getActors()}</p>
-                        <p>Plot: ${selectedMovie.getPlot()}</p>
-                        <p>Metascore: ${selectedMovie.getMetascore()}</p>
-                        
-                        <c:choose>
-                            <c:when test="${user!=null}">
-                                <a href="Controller?command=Movielist.addMovie"><button class="button">Add to Movielist</button></a>
-                            </c:when>
-                            
-                        </c:choose>
-                    
-                    
-                    
+
+                    <p><b>Title:</b> ${selectedMovie.getTitle()}</p>
+                    <p><b>Rated:</b> ${selectedMovie.getRated()}</p>
+                    <p><b>Released:</b> ${selectedMovie.getRelease()}</p>                        
+                    <p><b>Runtime:</b> ${selectedMovie.getRuntime()}</p>
+                    <p><b>Genre:</b>${selectedMovie.getGenre()}</p>
+                    <p><b>Director:</b> ${selectedMovie.getDirector()}</p>
+                    <p><b>Actors:</b> ${selectedMovie.getActors()}</p>
+                    <p><b>Plot:</b> ${selectedMovie.getPlot()}</p>
+                    <p><b>Metascore:</b> ${selectedMovie.getMetascore()}</p>
+
+                    <c:choose>
+                        <c:when test="${user!=null}">
+                            <a href="Controller?command=Movielist.addMovie"><button class="button" style="margin-bottom: 20px;">Add to Movielist</button></a>
+                        </c:when>
+
+                    </c:choose>
+
+
+
                 </div>
-            </section>
+        </section>
         <c:import url="footer.jspf"></c:import>
 
     </body>

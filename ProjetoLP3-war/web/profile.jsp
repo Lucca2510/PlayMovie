@@ -33,6 +33,8 @@
                     <p><label for="submit"></br><input type="submit" value="Update"/></label></p>      
 
                 </form>
+                    
+                    <img src="img/profileImg.png" alt="roda-roda" style="width:110px;height:110px;margin-top: 10px;">
 
             </div>
 

@@ -29,8 +29,10 @@
                 <c:if test="${user==null}">
                     <c:redirect url="index.jsp"></c:redirect>
                 </c:if>
+            <article id="welcomeTitle">
                 <h1 class="title">Welcome, ${user.getUsername()}!</h1>
-                <h3>This are the most popular movie lists on our site</h3>
+                <h3>This are the most popular movie lists on our site</h3>                
+            </article>
                 <div>
                     
                     <c:forEach items="${allmovielists}"  var="movielist">
