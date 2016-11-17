@@ -33,7 +33,7 @@
                     <img src="img/aboutG.png" alt="about Gabriel" style="width: 350px;height:350px;"/>                                       
                     <p><b>Nome:</b>Gabriel Manfredi</p>
                     <p><b>Idade: </b> 19 anos</p>
-                    <p><b>Hobbies: </b>Jogar futebol, youtuber e construir coisas</p>
+                    <p><b>Hobbies: </b>Futebol, youtuber e construir coisas</p>
                 </div>
                 
                 

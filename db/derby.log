@@ -1,14 +1,14 @@
-Wed Nov 16 16:48:09 BRST 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+Thu Nov 17 20:44:12 BRST 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
 ----------------------------------------------------------------
-Wed Nov 16 16:48:10 BRST 2016:
- Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0158-6e77-b92b-00007e461380
-no diretório de banco de dados C:\Users\NAGOYA\Documents\NetBeansProjects8.0.2\PlayMovie\db\ProjetoDB 
+Thu Nov 17 20:44:41 BRST 2016:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0158-7476-1a96-0000718722cd
+no diretório de banco de dados C:\Users\lgd25\Documents\NetBeansProjects\PlayMovie\db\ProjetoDB 
 
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_91-b14
-user.dir=C:\Users\NAGOYA\Downloads\glassfish4\javadb
+java.runtime.version=1.8.0_101-b13
+user.dir=C:\Users\lgd25\Documents\glassfish4\javadb
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
-derby.system.home=C:\Users\NAGOYA\Documents\NetBeansProjects8.0.2\PlayMovie\db
+derby.system.home=C:\Users\lgd25\Documents\NetBeansProjects\PlayMovie\db
 Carregador de classe do banco de dados iniciado - derby.database.classpath=''
